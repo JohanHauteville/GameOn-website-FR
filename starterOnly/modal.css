@@ -499,9 +499,11 @@ footer {
   padding-right: 2vw;
   margin: 0 ;
 }
-#errorfirst,#errorlast{
-  font-size: .8rem;
+
+#errorfirst,#errorlast,#erroremail,#errorquantity,#errorradio,#errorcondition{
+  font-size: .7rem;
   color: #f00;
+  text-align:inherit;
 }
 
 @media screen and (max-width: 800px) {
