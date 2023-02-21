@@ -46,6 +46,7 @@ function checkString(inputID,name){
     ajoutSpanError(inputID,"Votre "+name+" doit contenir plus de deux caractères");
   }else{
     ajoutSpanError(inputID,"");
+    return true;
   }
 }
 
@@ -60,6 +61,7 @@ function checkEmail(){
       ajoutSpanError("email","Texte après le '@' manquant ou incorrect");
     }else if(regex.test(emailValue)){           // Vérification du reste de l'adresse email (avant le '@')
       ajoutSpanError("email","");               // Efface le message d'erreur quand l'email est correct
+      return true;
     }else{
       ajoutSpanError("email","Texte avant le '@' manquant ou incorrect");
     }
@@ -69,6 +71,7 @@ function checkNumberOfConcour(){
     const numberOfConcourATester = document.getElementById("quantity").value;
     if (parseInt(numberOfConcourATester) >=0 && parseInt(numberOfConcourATester) <=99 ){  // Test d'une valeur se situant entre 0 et 99.
       ajoutSpanError("quantity","");
+      return true;
     } else{
       ajoutSpanError("quantity","Votre nombre doit être compris entre 0 et 99."); // Si valeur incorrecte ou absente, affichage du message d'erreur.
     }
@@ -82,6 +85,7 @@ function checkRadioCity(){
     if(radioButton.checked === true){
       locationChecked = radioButton.value;  // Attribution de la ville cochée
       ajoutSpanError("radio","");
+      return true;
     } 
   }
   if(locationChecked===""){
@@ -92,6 +96,7 @@ function checkRadioCity(){
 function checkCondition(){
   if(document.getElementById("checkbox1").checked){
     ajoutSpanError("condition","");
+    return true;
   } else {
     ajoutSpanError("condition","Merci de bien vouloir lire et accepter les conditions d'utilisation");
   }
@@ -99,14 +104,25 @@ function checkCondition(){
 
 function validate(event){
 
-  event.preventDefault();                     // annule le comportement par défaut du formulaire (rechargement de la page)
-  
-  checkString("first","prénom");              // contrôle le champ prénom
-  checkString("last","nom");                  // contrôle le champ nom
-  checkEmail();                               // contrôle le champ email
-  checkNumberOfConcour();                     // contrôle le champ nombre de concours
-  checkRadioCity();                           // contrôle de la ville choisie
-  checkCondition();
+  // event.preventDefault();                     // annule le comportement par défaut du formulaire (rechargement de la page)
+  if(
+    checkString("first","prénom") &
+    checkString("last","nom") &
+    checkEmail() &
+    checkNumberOfConcour() &
+    checkRadioCity() &
+    checkCondition()
+  ){
+    console.log("validation ok !");
+  } else {
+    event.preventDefault(); 
+  }
+  // checkString("first","prénom");              // contrôle le champ prénom
+  // checkString("last","nom");                  // contrôle le champ nom
+  // checkEmail();                               // contrôle le champ email
+  // checkNumberOfConcour();                     // contrôle le champ nombre de concours
+  // checkRadioCity();                           // contrôle de la ville choisie
+  // checkCondition();
 
 }
 
