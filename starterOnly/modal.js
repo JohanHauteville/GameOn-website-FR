@@ -25,7 +25,7 @@ function launchModal() {
 
 
 // Fermeture de la modal
-modalX.addEventListener("click", async function(){
+modalX.addEventListener("click", function(){
   modalbg.style.display = "none";
 })
 
@@ -103,8 +103,6 @@ function checkCondition(){
 }
 
 function validate(event){
-
-  // event.preventDefault();                     // annule le comportement par défaut du formulaire (rechargement de la page)
   if(
     checkString("first","prénom") &
     checkString("last","nom") &
@@ -117,13 +115,6 @@ function validate(event){
   } else {
     event.preventDefault(); 
   }
-  // checkString("first","prénom");              // contrôle le champ prénom
-  // checkString("last","nom");                  // contrôle le champ nom
-  // checkEmail();                               // contrôle le champ email
-  // checkNumberOfConcour();                     // contrôle le champ nombre de concours
-  // checkRadioCity();                           // contrôle de la ville choisie
-  // checkCondition();
-
 }
 
 
