@@ -199,9 +199,24 @@ main {
   padding-top: 10px;
 }
 
+
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+}
+
+form .form-validated{
+  display: flex;
+  height: 650px;
+  text-align: center;
+  color: #fff;
+  
+}
+
+.form-validated-span{
+  display: block;
+  font-size: 1.8rem;
+  margin: auto;
 }
 
 label {
@@ -224,6 +239,7 @@ input {
   font-size: 20px;
   height: 48px;
 }
+
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
@@ -231,7 +247,7 @@ input {
   display: block;
   margin-top: 7px;
   margin-bottom: 7px;
-  text-align: right;
+  text-align: left;
   line-height: 0.3;
   opacity: 0;
   transition: 0.3s;
@@ -338,7 +354,7 @@ input[data-error]::after {
   transform: rotate(-45deg);
 }
 .btn-submit,
-.btn-signup {
+.btn-signup, .btn-close {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -348,6 +364,11 @@ input[data-error]::after {
   color: #fff;
   cursor: pointer;
   border: 0;
+}
+.btn-close{
+  width: 50%;
+  padding: 12px 0;
+  text-align: center;
 }
 /* custom select styles */
 .custom-select {
@@ -418,7 +439,7 @@ input[data-error]::after {
 /* custom select end */
 .text-label {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
 }
 .hero-section {
   /* min-height: 93vh; */
@@ -500,11 +521,7 @@ footer {
   margin: 0 ;
 }
 
-#errorfirst,#errorlast,#erroremail,#errorquantity,#errorradio,#errorcondition{
-  font-size: .7rem;
-  color: #f00;
-  text-align:inherit;
-}
+
 
 @media screen and (max-width: 800px) {
   .hero-section {

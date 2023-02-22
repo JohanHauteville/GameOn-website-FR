@@ -85,7 +85,6 @@
                   id="last"
                   name="last"
                 /><br>
-                <span id="errorlast"></span>
               </div>
               <div
                 class="formData">
@@ -96,7 +95,6 @@
                   id="email"
                   name="email"
                 /><br>
-                <span id="erroremail"></span>
               </div>
               <div
                 class="formData">
@@ -112,11 +110,12 @@
                 class="formData">
                 <label for="quantity" >À combien de tournois <span class="gameOn">GameOn</span> avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
-                <span id="errorquantity"></span>
               </div>
-              <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
+              <!-- <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p> -->
+              
               <div
                 class="formData">
+                <label for="location">A quel tournoi souhaitez-vous participer cette année ?</label>
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -183,7 +182,6 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 ><br>
-                <span id="errorradio"></span>
               </div>
 
               <div
@@ -199,7 +197,10 @@
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
-                <span id="errorcondition"></span>
+              </div>
+
+              <div
+                class="formData">
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
@@ -220,7 +221,7 @@
     </main>
     <footer>
       <p class="copyrights">
-        Copyright 2014 - 2022, GameOn Inc.
+        Copyright 2014 - 2023, GameOn Inc.
       </p>
     </footer>
     <script src="modal.js"></script>
