@@ -552,7 +552,7 @@ footer {
     white-space: normal;
   }
   .hero-text {
-    width: unset;
+    width: 83%;
     font-size: .9rem;
     line-height: 1.4rem;
     margin-top: 20px;
