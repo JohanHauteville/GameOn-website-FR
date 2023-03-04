@@ -10,6 +10,7 @@
 }
 /* Landing Page */
 
+
 body {
   margin: 0;
   display: flex;
@@ -483,6 +484,7 @@ input[data-error]::after {
 }
 .hero-headline {
   font-size: 6rem;
+  /* font-size: clamp(2rem,5vw + 1rem,6rem); */
   font-weight: normal;
   white-space: nowrap;
 }

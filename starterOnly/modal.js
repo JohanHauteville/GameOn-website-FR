@@ -146,7 +146,13 @@ function validate(event) {
     checkCondition()
   ){
     // on remplace tout le formulaire par notre code HTML contenant le message de validation ainsi que le boutton "fermer"
-    modalBdy.innerHTML = " <div class=\"form-validated\"> <span class=\"form-validated-span\">Merci pour<br>votre inscription<span></div> <a class=\"btn-close\" onclick=\"closeModal()\">Fermer</a>";
+    modalBdy.innerHTML = ` 
+    <div class="form-validated">
+      <span class="form-validated-span">Merci pour<br>votre inscription<span>
+    </div>
+    <a class="btn-close" onclick="closeModal()">Fermer</a>
+    `;
+    
   }
 }
 
