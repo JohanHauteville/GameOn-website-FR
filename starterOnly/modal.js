@@ -32,8 +32,6 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
-
-
 // fonction d'affichage / désaffichage d'un champs incorrect
 function affichageErreur(inputNumber = 0, text = "") {
   if (text === "") {    // Si la chaine est vide alors on supprime l'affichage de l'erreur
@@ -130,9 +128,6 @@ function checkCondition() {
   return false;
 }
 
-
-
-
 // fonction de validation du formulaire
 function validate(event) {
   event.preventDefault(); //désactive le comportement classique du formulaire
@@ -152,7 +147,6 @@ function validate(event) {
     </div>
     <a class="btn-close" onclick="closeModal()">Fermer</a>
     `;
-    
   }
 }
 
