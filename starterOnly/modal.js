@@ -15,13 +15,16 @@ const formData = document.querySelectorAll(".formData");
 const modalX = document.querySelector(".close");
 const modalBdy = document.querySelector(".modal-body");
 
+
+
+// modalMessage.innerHTML = validatedMessage;
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
-
 }
 
 // close modal event
@@ -30,6 +33,11 @@ modalX.addEventListener("click", closeModal);
 //close modal form
 function closeModal() {
   modalbg.style.display = "none";
+}
+
+function closeValidatedModal() {
+  modalbg.style.display = "none";
+  location.reload()   // Recharge la page ainsi que le formulaire
 }
 
 // fonction d'affichage / désaffichage d'un champs incorrect
@@ -50,7 +58,7 @@ function checkString(elementID,numberOfFormData,label) {
   const lastID = document.getElementById(elementID).value;
   if (lastID === "") {    // controle si la chaîne est vide
     affichageErreur(numberOfFormData, `Votre ${label} est manquant`);
-  } else if (lastID.length <= 2) {   // controle si la chaîne a plus de deux caractères
+  } else if (lastID.length <= 1) {   // controle si la chaîne a plus de deux caractères
     affichageErreur(numberOfFormData, `Votre ${label} doit contenir plus de deux caractères`);
   } else {
     affichageErreur(numberOfFormData, "");
@@ -85,7 +93,6 @@ function checkBirthDate(){
     affichageErreur(3, "");
     return true;
   }
-
 }
 
 // fonction de contrôle du nombre de concours
@@ -130,7 +137,6 @@ function checkCondition() {
 
 // fonction de validation du formulaire
 function validate(event) {
-  event.preventDefault(); //désactive le comportement classique du formulaire
   if (
     checkString("first",0,"prénom") &
     checkString("last",1,"nom") &
@@ -141,13 +147,16 @@ function validate(event) {
     checkCondition()
   ){
     // on remplace tout le formulaire par notre code HTML contenant le message de validation ainsi que le boutton "fermer"
-    modalBdy.innerHTML = ` 
+    modalBdy.innerHTML=` 
     <div class="form-validated">
       <span class="form-validated-span">Merci pour<br>votre inscription<span>
     </div>
-    <a class="btn-close" onclick="closeModal()">Fermer</a>
+    <a class="btn-close" onclick="closeValidatedModal()">Fermer</a>
     `;
+    
+
   }
+  event.preventDefault(); //désactive le comportement classique du formulaire
 }
 
 
